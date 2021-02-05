@@ -14,6 +14,6 @@ mongoose.connect('mongodb://localhost:27017/curso_mongo', {
 			console.log('Connection successful');
 
 			app.listen(port, () => {
-				console.log('Server is running')
+				console.log('Server is running at localhost:3000')
 			})
 	}).catch(error => console.log(error));
