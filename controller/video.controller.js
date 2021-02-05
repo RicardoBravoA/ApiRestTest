@@ -117,7 +117,7 @@ function update(request, response) {
 	});
 }
 
-function delete(request, response) {
+function remove(request, response) {
 	var id = request.params.id;
 
 	VideoModel.findByIdAndRemove(id, (error, video) => {
@@ -145,5 +145,5 @@ module.exports = {
 	list,
 	getVideo,
 	update,
-	delete
+	remove
 };
