@@ -30,6 +30,24 @@ function save(request, response){
 	video.description = params.description;
 	video.date = params.date;
 
+	video.save((error, data) => {
+		if(error){
+			response.status(500).send({
+				message: 'Server error'
+			});
+		} else {
+			if(data){
+				response.status(200).send({
+					video: data
+				});
+			} else {
+				response.status(500).send({
+					message: 'Error saving video'		
+				});
+			}
+		}
+	});
+
 
 }
 
