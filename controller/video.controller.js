@@ -52,5 +52,6 @@ function save(request, response){
 }
 
 module.exports = {
-	test
+	test,
+	save
 };
