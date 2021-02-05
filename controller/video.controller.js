@@ -31,12 +31,12 @@ function save(request, response){
 	video.date = params.date;
 
 	video.save((error, data) => {
-		if(error){
+		if(error) {
 			response.status(500).send({
 				message: 'Server error'
 			});
 		} else {
-			if(data){
+			if(data) {
 				response.status(200).send({
 					video: data
 				});
@@ -48,10 +48,30 @@ function save(request, response){
 		}
 	});
 
+}
 
+function list(request, response) {
+	VideoModel.find({}).exec((error, data) => {
+		if(error) {
+			response.status(500).send({
+				message: 'Server error'
+			});
+		} else {
+			if(data) {
+				response.status(200).send({
+					data
+				});
+			} else {
+				response.status(404).send({
+					message: 'Videos not found'
+				});
+			}
+		}
+	});
 }
 
 module.exports = {
 	test,
-	save
+	save,
+	list
 };
