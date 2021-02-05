@@ -94,6 +94,29 @@ function getVideo(request, response) {
 	});
 }
 
+function update(request, response) {
+	var id = request.params.id;
+	var params = params.body;
+
+	VideoModel.findByIdAndUpdate(id, params, {new: true}, (error, video) => {
+		if(error) {
+			response.status(500).send({
+				message: 'Server error'
+			});
+		} else {
+			if(video) {
+				response.status(200).send({
+					video: video
+				});
+			} else {
+				response.status(404).send({
+					message: 'Video not found'
+				});
+			}
+		}
+	});
+}
+
 module.exports = {
 	test,
 	save,
