@@ -72,5 +72,6 @@ function list(request, response) {
 
 module.exports = {
 	test,
-	save
+	save,
+	list
 };
