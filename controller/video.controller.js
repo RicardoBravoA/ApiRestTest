@@ -117,10 +117,33 @@ function update(request, response) {
 	});
 }
 
+function remove(request, response) {
+	var id = request.params.id;
+
+	VideoModel.findByIdAndRemove(id, (error, video) => {
+		if(error) {
+			response.status(500).send({
+				message: 'Server error'
+			});
+		} else {
+			if(video) {
+				response.status(200).send({
+					video: video
+				});
+			} else {
+				response.status(404).send({
+					message: 'Video not found'
+				});
+			}
+		}
+	});
+}
+
 module.exports = {
 	test,
 	save,
 	list,
 	getVideo,
-	update
+	update,
+	remove
 };
