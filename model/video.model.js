@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 
 var schema = mongoose.Schema;
 
-var videoSchema = Schema({
+var videoSchema = schema({
 	user: String,
 	name: String,
 	description: String,
