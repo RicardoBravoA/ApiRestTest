@@ -72,8 +72,31 @@ function list(request, response) {
 	});
 }
 
+function getVideo(request, response) {
+	var id = request.params.id;
+
+	VideoModel.findById(id).exec((error, video) => {
+		if(error) {
+			response.status(500).send({
+				message: 'Server error'
+			});
+		} else {
+			if(video) {
+				response.status(200).send({
+					video
+				});
+			} else {
+				response.status(404).send({
+					message: 'Video not found'
+				});
+			}
+		}
+	});
+}
+
 module.exports = {
 	test,
 	save,
-	list
+	list,
+	getVideo
 };
