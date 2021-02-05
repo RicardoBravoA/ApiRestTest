@@ -25,6 +25,11 @@ function save(request, response){
 		});
 	}
 
+	video.user = params.use;
+	video.name = params.name;
+	video.description = params.description;
+	video.date = params.date;
+
 
 }
 
