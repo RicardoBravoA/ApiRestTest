@@ -97,5 +97,6 @@ function getVideo(request, response) {
 module.exports = {
 	test,
 	save,
-	list
+	list,
+	getVideo
 };
