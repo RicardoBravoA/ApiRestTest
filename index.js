@@ -12,4 +12,8 @@ mongoose.connect('mongodb://localhost:27017/curso_mongo', {
 	useUnifiedTopology: true
 	}).then(() => {
 			console.log('Connection successful');
+
+			app.listen(port, () => {
+				console.log('Server is running')
+			})
 	}).catch(error => console.log(error));
