@@ -9,4 +9,5 @@ var app = express();
 
 //body-parser
 
-app.use()
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
