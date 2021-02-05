@@ -52,7 +52,8 @@ function save(request, response){
 
 function list(request, response) {
 	// var video is exposed in json response
-	VideoModel.find({}).exec((error, video) => {
+	// sort -1 order desc
+	VideoModel.find({}).sort({'_id': -1}).exec((error, video) => {
 		if(error) {
 			response.status(500).send({
 				message: 'Server error'
