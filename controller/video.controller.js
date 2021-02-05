@@ -51,15 +51,16 @@ function save(request, response){
 }
 
 function list(request, response) {
-	VideoModel.find({}).exec((error, data) => {
+	// var video is exposed in json response
+	VideoModel.find({}).exec((error, video) => {
 		if(error) {
 			response.status(500).send({
 				message: 'Server error'
 			});
 		} else {
-			if(data) {
+			if(video) {
 				response.status(200).send({
-					data
+					video
 				});
 			} else {
 				response.status(404).send({
