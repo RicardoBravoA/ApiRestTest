@@ -144,5 +144,6 @@ module.exports = {
 	save,
 	list,
 	getVideo,
-	update
+	update,
+	delete
 };
