@@ -96,7 +96,7 @@ function getVideo(request, response) {
 
 function update(request, response) {
 	var id = request.params.id;
-	var params = params.body;
+	var params = request.body;
 
 	VideoModel.findByIdAndUpdate(id, params, {new: true}, (error, video) => {
 		if(error) {
