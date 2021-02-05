@@ -121,5 +121,6 @@ module.exports = {
 	test,
 	save,
 	list,
-	getVideo
+	getVideo,
+	update
 };
