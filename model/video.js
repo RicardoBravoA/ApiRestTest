@@ -10,3 +10,5 @@ var videoSchema = Schema({
 	description: String,
 	date: Date
 });
+
+module.exports = mongoose.model('Video', videoSchema);
