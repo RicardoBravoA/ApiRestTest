@@ -5,6 +5,6 @@ var videoController = require('../controller/video.controller');
 
 var api = express.Router();
 
-api.get('/tests', videoController.test);
+api.get('/test', videoController.test);
 
 module.exports = api;
