@@ -14,7 +14,15 @@ app.use(bodyParser.json());
 
 //config CORS
 
-//routes
+
+/* routes */
+
+//test route
+app.get('/test', (request, response) => {
+	response.status(200).send({
+		message: 'Test route successful'
+	})
+})
 
 
 //module conversion
