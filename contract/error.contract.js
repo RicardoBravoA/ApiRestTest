@@ -9,8 +9,14 @@ function serverError(response) {
 	});
 };
 
+function showError(response, message) {
+	response.status(200).send({
+		message: message
+	});
+};
 
 
 module.exports = {
-	serverError
+	serverError,
+	showError
 };
