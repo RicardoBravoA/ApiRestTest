@@ -34,9 +34,7 @@ function save(request, response){
 
 	video.save((error, data) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(data) {
 				response.status(200).send({
