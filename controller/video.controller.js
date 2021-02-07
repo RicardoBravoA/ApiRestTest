@@ -55,9 +55,7 @@ function list(request, response) {
 	// sort -1 order desc
 	VideoModel.find({}).sort({'_id': -1}).exec((error, video) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(video) {
 				response.status(200).send({
