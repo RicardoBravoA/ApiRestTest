@@ -41,9 +41,7 @@ function save(request, response){
 					video: data
 				})
 			} else {
-				response.status(500).send({
-					message: 'Error saving video'		
-				})
+				errorContract.showError(response, Constant.ERROR_SAVING_VIDEO)
 			}
 		}
 	})
@@ -62,9 +60,7 @@ function list(request, response) {
 					video
 				})
 			} else {
-				response.status(404).send({
-					message: 'Videos not found'
-				})
+				errorContract.showError(response, Constant.VIDEO_NOT_FOUND)
 			}
 		}
 	})
@@ -101,9 +97,7 @@ function update(request, response) {
 					video: video
 				})
 			} else {
-				response.status(404).send({
-					message: 'Video not found'
-				})
+				errorContract.showError(response, Constant.VIDEO_NOT_FOUND)
 			}
 		}
 	})
@@ -121,9 +115,7 @@ function remove(request, response) {
 					video: video
 				})
 			} else {
-				response.status(404).send({
-					message: 'Video not found'
-				})
+				errorContract.showError(response, Constant.VIDEO_NOT_FOUND)
 			}
 		}
 	})
