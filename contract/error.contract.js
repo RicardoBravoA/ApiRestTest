@@ -1,10 +1,11 @@
 'use strict'
 
 var ErrorModel = require('../model/error.model');
+const Constant = require('../util/constant')
 
 function serverError(response) {
 	response.status(500).send({
-		message: SERVER_ERROR
+		message: Constant.SERVER_ERROR
 	});
 };
 
