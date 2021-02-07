@@ -1,6 +1,7 @@
 'use strict'
 
 var VideoModel = require('../model/video.model');
+var errorContract = require('../contract/error.contract');
 
 function test(request, response) {
 	response.status(200).send({
@@ -77,9 +78,7 @@ function getVideo(request, response) {
 
 	VideoModel.findById(id).exec((error, video) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			});
+			errorContract.serverError(response)
 		} else {
 			if(video) {
 				response.status(200).send({
