@@ -94,9 +94,7 @@ function update(request, response) {
 
 	VideoModel.findByIdAndUpdate(id, params, {new: true}, (error, video) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(video) {
 				response.status(200).send({
