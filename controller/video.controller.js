@@ -16,9 +16,7 @@ function save(request, response){
 	var params = request.body
 
 	if(!params.name){
-		response.status(500).send({
-			message: 'Name is required'
-		})
+		errorContract.showError(response, Constant.NAME_IS_REQUIRED)
 	}
 
 	if(!params.user){
