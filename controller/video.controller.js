@@ -115,9 +115,7 @@ function remove(request, response) {
 					video: video
 				})
 			} else {
-				response.status(404).send({
-					message: 'Video not found'
-				})
+				errorContract.showError(response, Constant.VIDEO_NOT_FOUND)
 			}
 		}
 	})
