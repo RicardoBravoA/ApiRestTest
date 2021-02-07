@@ -114,9 +114,7 @@ function remove(request, response) {
 
 	VideoModel.findByIdAndRemove(id, (error, video) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(video) {
 				response.status(200).send({
