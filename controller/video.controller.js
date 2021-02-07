@@ -34,9 +34,7 @@ function save(request, response){
 
 	video.save((error, data) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(data) {
 				response.status(200).send({
@@ -57,9 +55,7 @@ function list(request, response) {
 	// sort -1 order desc
 	VideoModel.find({}).sort({'_id': -1}).exec((error, video) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(video) {
 				response.status(200).send({
@@ -98,9 +94,7 @@ function update(request, response) {
 
 	VideoModel.findByIdAndUpdate(id, params, {new: true}, (error, video) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(video) {
 				response.status(200).send({
@@ -120,9 +114,7 @@ function remove(request, response) {
 
 	VideoModel.findByIdAndRemove(id, (error, video) => {
 		if(error) {
-			response.status(500).send({
-				message: 'Server error'
-			})
+			errorContract.serverError(response)
 		} else {
 			if(video) {
 				response.status(200).send({
