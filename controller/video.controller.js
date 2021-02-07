@@ -41,9 +41,7 @@ function save(request, response){
 					video: data
 				})
 			} else {
-				response.status(500).send({
-					message: 'Error saving video'		
-				})
+				errorContract.showError(response, Constant.ERROR_SAVING_VIDEO)
 			}
 		}
 	})
