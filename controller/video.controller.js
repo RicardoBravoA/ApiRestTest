@@ -60,9 +60,7 @@ function list(request, response) {
 					video
 				})
 			} else {
-				response.status(404).send({
-					message: 'Videos not found'
-				})
+				errorContract.showError(response, Constant.VIDEO_NOT_FOUND)
 			}
 		}
 	})
