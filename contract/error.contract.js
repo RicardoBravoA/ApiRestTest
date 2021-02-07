@@ -15,7 +15,14 @@ function showError(response, message) {
 	})
 }
 
+function showParameterError(response, message) {
+	response.status(500).send({
+		message: message
+	})
+}
+
 module.exports = {
 	serverError,
-	showError
+	showError,
+	showParameterError
 }
