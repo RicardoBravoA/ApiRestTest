@@ -20,9 +20,7 @@ function save(request, response){
 	}
 
 	if(!params.user){
-		response.status(500).send({
-			message: 'User is required'
-		})
+		errorContract.showError(response, Constant.USER_IS_REQUIRED)
 	}
 
 	video.user = params.use
