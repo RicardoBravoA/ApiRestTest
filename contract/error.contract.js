@@ -4,19 +4,19 @@ var ErrorModel = require('../model/error.model')
 const Constant = require('../util/constant')
 
 function serverError(response) {
-	response.status(500).send({
+	response.status(Constant.CODE_500).send({
 		message: Constant.SERVER_ERROR
 	})
 }
 
 function showError(response, message) {
-	response.status(200).send({
+	response.status(Constant.CODE_200).send({
 		message: message
 	})
 }
 
 function showParameterError(response, message) {
-	response.status(500).send({
+	response.status(Constant.CODE_500).send({
 		message: message
 	})
 }

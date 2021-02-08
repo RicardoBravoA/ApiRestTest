@@ -33,7 +33,7 @@ function save(request, response){
 			errorContract.serverError(response)
 		} else {
 			if(data) {
-				response.status(200).send({
+				response.status(Constant.CODE_200).send({
 					video: data
 				})
 			} else {
@@ -52,7 +52,7 @@ function list(request, response) {
 			errorContract.serverError(response)
 		} else {
 			if(video) {
-				response.status(200).send({
+				response.status(Constant.CODE_200).send({
 					video
 				})
 			} else {
@@ -70,7 +70,7 @@ function getVideo(request, response) {
 			errorContract.serverError(response)
 		} else {
 			if(video) {
-				response.status(200).send({
+				response.status(Constant.CODE_200).send({
 					video
 				})
 			} else {
@@ -89,7 +89,7 @@ function update(request, response) {
 			errorContract.serverError(response)
 		} else {
 			if(video) {
-				response.status(200).send({
+				response.status(Constant.CODE_200).send({
 					video: video
 				})
 			} else {
@@ -107,7 +107,7 @@ function remove(request, response) {
 			errorContract.serverError(response)
 		} else {
 			if(video) {
-				response.status(200).send({
+				response.status(Constant.CODE_200).send({
 					video: video
 				})
 			} else {
